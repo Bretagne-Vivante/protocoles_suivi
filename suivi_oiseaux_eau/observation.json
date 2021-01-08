@@ -1,5 +1,4 @@
 {
-  "geometry_type": "Point",
   "display_properties": [
     "cd_nom",
     "determiner",
@@ -27,11 +26,11 @@
       "type_widget": "number",
       "attribut_label": "Effectif dénombré",
       "required": true,
-      "min": 1
+      "min": 0
     },
     "comments": {
       "type_widget": "text",
-      "attribut_label": "Détail sur l'observation'"
+      "attribut_label": "Détail sur l'observation"
     }
   }
 }

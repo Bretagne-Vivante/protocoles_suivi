@@ -6,31 +6,31 @@
     "dataset",
     "nb_observations"
   ],
-  "specific": {
+  "specific": { 
     "nom_secteur": {
       "type_widget": "text",
       "required": true,
       "attribut_label": "Choix du Secteur"
     },
-    "id_nomenclature_meteo_vent": {
+    "id_nomenclature_visibilite": {
       "type_widget": "select",
-      "attribut_label": "Meteo : Vent",
-      "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
-      "required": true
-    },
-    "id_nomenclature_meteo_ciel": {
-      "type_widget": "select",
-      "attribut_label": "Meteo : Ciel",
-      "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
+      "attribut_label": "Visibilité",
+      "values": ["0-100m", "100-300m", "300-1000m", ">1000m", "inconnu"],
       "required": true
     },
     "time_start": {
       "type_widget": "time",
       "attribut_label": "Heure de début"
     },
-    "time_end": {
-      "type_widget": "time",
-      "attribut_label": "Heure de fin"
-    }
+    "activite_humaine": {
+      "type_widget": "text",
+      "required": true,
+      "attribut_label": "Activité humaine proche"
+    },
+    "nb_pecheurs": {
+      "type_widget": "number",
+      "required": true,
+      "attribut_label": "Nombre de pêcheurs à pied"
+
   }
 }
