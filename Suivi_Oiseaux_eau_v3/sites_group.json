@@ -19,5 +19,11 @@
     "nb_sites",
     "nb_visits"
   ],
-  "map_label_field_name": "base_site_code"
+  "map_label_field_name": "base_site_code",
+  "specific": {
+    "contact_name": {
+      "type_widget": "text",
+      "attribut_label": "Responsable de la réserve"
+    }
+  }
 }

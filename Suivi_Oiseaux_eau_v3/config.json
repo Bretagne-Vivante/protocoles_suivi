@@ -7,10 +7,9 @@
             "observation": null
           }
         }
-      },
-      "site": null
-    }
+      }
+  }  
   },
   "taxonomy_display_field_name": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
-  "synthese": "__MODULE.B_SYNTHESE"  
+  "synthese": "__MODULE.B_SYNTHESE"
 }

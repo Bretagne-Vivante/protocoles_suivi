@@ -1,21 +1,21 @@
 {
   "types": [
     {
-      "mnemonique": "TEST_METEO",
-      "label_default": "Météo",
-      "definition_default": "Météo (protocôle de suivi test)"
+      "mnemonique": "VISIBILITE",
+      "label_default": "Visibilité",
+      "definition_default": "Visibilité (protocole issu de Faune)"
     }
   ],
   "nomenclatures": [
     {
-      "type":"TEST_METEO",
+      "type":"VISIBILITE",
       "cd_nomenclature": "METEO_B",
       "mnemonique": "Beau",
       "label_default": "Beau temps",
       "definition_default": "Beau temps (test)"
     },
     {
-      "type":"TEST_METEO",
+      "type":"VISIBILITE",
       "cd_nomenclature": "METEO_M",
       "mnemonique": "Mauvais",
       "label_default": "Mauvais temps",

@@ -11,7 +11,7 @@ Description de la méthode de saisies des données
 =====================
 
 
-Dans ce sous-module, une visite est une visite d'un secteur d'un site spécifique.
+Dans ce sous-module, une visite est une visite d'un secteur d'une réserve spécifique.
 
 .. image:: img/accueil.png
 
@@ -19,18 +19,23 @@ Dans ce sous-module, une visite est une visite d'un secteur d'un site spécifiqu
 Détail des formulaires
 ======================
 
-Sites
+Un Groupe de Sites forme une réserve 
+-----
+Une réserve est caractérisée par les champs suivants :
+- Nom 
+- Date création de la réserve
+
+
+Un Site est un secteur d'une réserve
 -----
 
-Les sites de ce sous-module constituent les pièges exploités. Ces sites de piégeages sont caractérisés par les champs suivants :
+Les sites de ce sous-module constituent des secteurs d'une réserve naturelle. Ces secteurs sont caractérisés par les champs suivants :
 
-- ``Nom du site de piégeage`` (exemple : Forêt du Lauvitel - point aval)
-- ``Code du piège`` (exemple : TM04)
-- ``L'installateur du piège`` (équivaut au descripteur du site de suivi)
-- ``Date de première installation du piège`` (équivaut à la date de description du site)
-- ``Le type de piège`` : dans notre cas, il s'agit de nomenclatures du type "METH_OBS" (voir spécificités plus bas)
-- ``L'habitat dominant`` : basé sur une liste de valeurs configurables dans le fichier site.json
-- ``Détail sur le site de piégeage`` : commentaire
+- ``Nom du secteur de la réserve`` (exemple : Forêt du Lauvitel - point aval)
+- ``Code du secteur`` (exemple : TM04)
+- ``Responsable de la réserve`` 
+- ``Date de première visite du secteur`` 
+- ``Détail sur le secteur`` : commentaire
 
 
 .. image:: img/sites.png
@@ -38,14 +43,13 @@ Les sites de ce sous-module constituent les pièges exploités. Ces sites de pi�
 Visites
 -------
 
-Les visites correspondent aux relevés des pièges. Elles sont caractérisées par les informations suivantes :
+Les visites correspondent aux observations visuelles des oiseaux. Elles sont caractérisées par les informations suivantes :
 
-- ``Opérateur(s) du relevé`` : personnes effectuant le relevé des pièges. Ils seront "observateurs" une fois la donnée renvoyée dans la synthèse
-- ``Date de début du piégeage`` : correspond à date_min de l'observation dans la synthèse
-- ``Date de fin du piégeage`` : date du relevé du piège - correspond à date_max de l'observation dans la synthèse
+- ``observateurs`` : personnes effectuant le relevé des pièges. Ils seront "observateurs" une fois la donnée renvoyée dans la synthèse
+- ``Date de début de la visite`` : correspond à date_min de l'observation dans la synthèse
 - ``Commentaire``
 - ``Jeu de données``
-
+- ``Conditions de visibilité``
 .. image:: img/visites.png
 
 Observations
@@ -54,14 +58,11 @@ Observations
 Les observations de ce sous-modules sont décrites par les informations suivantes :
 
 - ``Espèce`` : taxon parmi la liste configurée (saisie_occtax par défaut)
-- ``Commentaire``
-- ``Déterminateur``
-- ``Méthode de détermination`` (nomenclature "METH_DETERMIN")
-- ``Stade de vie`` (nomenclature "STADE_VIE")
-- ``Sexe`` (nomenclature "SEXE")
+- ``Commentaire`` : détail sur l'observation
+- ``Observateur``
 - ``Effectif dénombré`` : correspond au nombre_min ET nombre_max de la synthèse
 
-Par défaut dans la vue synthèse (synthese.sql), les dénombrements indiqués sont des "individus" "comptés". Les individus sont indiqués "trouvé mort".
+Par défaut dans la vue synthèse (synthese.sql), les dénombrements indiqués sont des "individus" "comptés".
 
 .. image:: img/observations.png
 

@@ -1,0 +1,21 @@
+{
+  "geometry_type": "Polygon",
+  "label": "Secteur",
+  "label_list": "Secteur de la Réserve",
+  "display_properties": [
+    "sites_group_name",
+    "nb_visits",
+    "comments"
+  ],
+  "display_list": [
+
+    "nb_visits"
+  ],
+  "specific": {
+    "description_site": {
+      "type_widget": "text",
+      "attribut_label": "Description du site"
+    }
+  }
+
+}
