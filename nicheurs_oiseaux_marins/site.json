@@ -1,0 +1,71 @@
+{
+  "genre":"M",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "display_properties": [
+    "id_inventor",
+    "first_use_date",
+    "base_site_name",
+    "habitat_principal",
+    "base_site_description"
+  ],
+  "display_list": [
+    "base_site_name",
+    "cd_nom",
+    "id_sites_group",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon observé",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+  },
+    "base_site_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+
+    },
+      "id_sites_group": {
+        "type_widget": "datalist",
+        "attribut_label": "Secteur",
+        "type_util": "sites_group",
+        "keyValue": "id_sites_group",
+        "keyLabel": "sites_group_name",
+        "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+        "application": "GeoNature",
+        "required": false,
+        "hidden": false
+      },
+      "nb_visits": {
+        "attribut_label": "Nb. de passages"
+      },
+      "base_site_name": {
+        "type_widget": "text",
+        "attribut_label": "identifiant du nid",
+        "required": true
+      },
+      "last_visit": {
+        "attribut_label": "Dernier passage",
+        "type_util": "date"
+      },
+      "habitat_principal": {
+        "type_widget": "datalist",
+        "attribut_label": "Habitat naturel environnant",
+        "description": "Habitat naturel",
+        "api": "habref/habitats/autocomplete",
+        "application": "GeoNature",
+        "keyValue": "cd_hab",
+        "keyLabel": "search_name",
+        "type_util": "habitat",
+        "params": {
+          "cd_typo": 22,
+          "limit": 5000,
+          "search_name": ""
+        }
+      }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+  "cd_nom",
+  "id_nomenclature_stade",
+  "id_nomenclature_sex",
+  "id_nomenclature_obj_denbr",
+  "id_nomenclature_typ_denbr",
+  "count_min",
+  "count_max",
+  "id_nomenclature_code_atlas",
+  "macro_dechet_qte",
+  "macro_dechet_composition",
+  "comments"
+],
+"display_list": [
+  "cd_nom",
+  "id_nomenclature_typ_denbr",
+  "count_min",
+  "count_max"
+],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon observé",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+  },
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3", "4", "5","10"]
+      }, 
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_obj_denbr": {
+      "type_widget": "datalist",
+      "attribut_label": "Objet du dénombrement",
+      "api": "nomenclatures/nomenclature/OBJ_DENBR",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+          "cd_nomenclature": ["IND", "CPL", "NID", "PON"]
+      },
+      "default": {
+        "cd_nomenclature": "IND"
+      }
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3"]
+      },
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_typ_denbr": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de dénombrement",
+      "api": "nomenclatures/nomenclature/TYP_DENBR",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+          "cd_nomenclature": ["Co", "Es"]
+      }
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Nombre minimum",
+      "required": true,
+      "min": 1,
+      "value": 1
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Nombre maximum",
+      "required": "({value}) => value.count_min !=1",
+      "min": "({value}) => value.count_min"
+    },
+    "id_nomenclature_code_atlas": {
+      "type_widget": "datalist",
+      "attribut_label": "Code Atlas",
+      "api": "nomenclatures/nomenclature/VN_ATLAS_CODE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "definition_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    },
+    "macro_dechet_qte": {
+      "type_widget": "select",
+      "attribut_label": "Macro Déchets Quantité",
+      "values": [
+        "0",
+        "entre 1 et 5",
+        "entre 5 et 10",
+        "entre 11 et 20",
+        "Plus de 20"
+      ],
+      "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 2447 ||value.cd_nom.cd_nom == 2440)"
+    },
+    "macro_dechet_composition":{
+      "type_widget":"multiselect",
+      "attribut_label":"Macro Déchets Composition",
+      "required":false,
+      "values":[
+         "Acier",
+         "Plastique",
+         "Verre",
+         "Fil de pêche",
+         "Autre"
+      ],
+      "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 2447)" 
+   },
+   "medias": {
+    "hidden": true,
+    "type_widget": "medias",
+    "attribut_label": "Médias",
+    "schema_dot_table": "gn_monitoring.t_observations"
+  }
+  }
+}

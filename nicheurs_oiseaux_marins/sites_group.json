@@ -1,0 +1,64 @@
+{
+  "genre":"F",
+  "label": "Secteur",
+  "label_list": "Secteurs",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+    {
+      "template": "fiche_secteur.html",
+      "label": "Export PDF"
+    }
+  ],
+  "display_properties": [
+    "id_inventor",
+    "sites_group_name",
+    "comments"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "nb_sites"
+  ],
+  "specific": {
+    "id_inventor": {
+      "type_widget": "datalist",
+      "attribut_label": "Responsable du secteur",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "required": true
+    },
+    "comments": {
+        "type_widget": "textarea",
+        "attribut_label": "Commentaire"
+      },
+    "sites_group_name": {
+      "type_widget": "datalist",
+      "attribut_label": "Secteur de comptage",
+      "hidden": false,
+      "required": true,
+      "keyValue": "area_code",
+      "keyLabel": "area_name",
+      "type_util": "areas",
+      "api": "/geo/areas?type_code=ORA",
+      "application": "GeoNature",
+      "definition": "Nom du zonage ORA"
+    },
+    "sites_group_code": {
+      "type_widget": "text",
+      "attribut_label": "Code",
+      "required": false,
+      "hidden": true
+    },
+    "sites_group_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Description",
+      "hidden":true
+    },
+    "nb_visits": {
+      "attribut_label": "Nombre de passages"
+    }
+
+  }
+}
