@@ -1,0 +1,84 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "nombre_individu",
+    "id_nomenclature_precision_comptage",   
+    "if_cd_nom_exception",
+    "cd_nom_exception",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "nombre_individu",
+    "id_nomenclature_stade_vie",  
+    "id_nomenclature_sexe",    
+    "observers_obs"
+  ],
+  "keep": [
+    "id_nomenclature_precision_comptage"
+  ],
+  "redirect_to_parent": "module",
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "if_cd_nom_exception": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Taxon exceptionnel ?",
+      "values": ["OUI", "NON"],
+      "value": "NON"
+    },
+    "cd_nom_exception": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon exceptionnel",
+      "type_util": "taxonomy",
+      "required": false,
+      "id_list": "114",
+      "hidden": "({value}) => !(value.if_cd_nom_exception === 'OUI')"
+
+    },
+    "nombre_individu": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus (total)",
+      "required": true,
+      "min": 0,
+      "max": 1000000
+    },  
+    "id_nomenclature_precision_comptage": {
+      "type_widget": "datalist",
+      "attribut_label": "Précision du comptage (laisser vide pour bonne précision)",
+      "api": "nomenclatures/nomenclature/PRECI_COMPTAGE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "value": "782",
+      "default": {
+          "id_nomenclature": "782"
+      }
+    },
+    "medias": {
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations",
+      "hidden": true
+    }
+  },
+  "change": [
+    "({objForm, meta, value}) => {",
+    "  console.log('log meta', meta);",    
+    "  console.log('log objForm', objForm);",
+    "console.log('test value');",
+    "console.log(value);",     
+    "console.log('meta.parents.site.properties.cd_nom: ', meta.parents.site.properties.cd_nom);",
+    "}",
+    ""
+  ]
+}

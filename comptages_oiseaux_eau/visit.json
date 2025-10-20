@@ -1,0 +1,176 @@
+{
+  "chained": false,
+  "display_properties": [
+    "id_dataset",
+    "observers",
+    "if_recensement",
+    "visit_date_min",
+    "visit_heure",
+    "if_cmc",
+    "id_nomenclature_type_comptage",
+    "if_comptage_exhaustif",
+    "if_comptage_condition",
+    "comm_comptage_condition",
+    "if_disturbance",
+    "id_nomenclature_disturbance",
+    "comm_disturbance",
+    "comments",
+    "nb_observations"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "if_cmc",
+    "nb_observations"
+  ],
+  "specific": {
+    "id_base_site": {
+      "type_widget": "site",
+      "required": true,
+      "attribut_label": "Choix du site"
+    },
+    "id_dataset": {
+      "type_widget": "dataset",
+      "type_util": "dataset",
+      "attribut_label": "Jeu de données",
+      "module_code": "__MODULE.MODULE_CODE",
+      "creatable_in_module": "__MODULE.MODULE_CODE.MONITORINGS_VISITES",
+      "required": true,
+      "hidden" : false
+    },
+    "observers": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "hidden": false,
+      "required": true,
+      "designStyle": "bootstrap"
+    },
+    "visit_date_min": {
+      "required": true,
+      "attribut_label": "Date de la visite",
+      "value": "() => new Date().toISOString().split('T')[0]"
+    },
+    "visit_heure": {
+      "type_widget": "time",
+      "required": false,
+      "attribut_label": "Heure début du comptage"    
+    },
+    "if_recensement": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Site recensé",
+      "values": ["OUI", "NON"],
+      "value": "OUI"
+    },
+    "if_cmc": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "COMPTAGE MENSUEL COMMUN",
+      "values": ["OUI", "NON"],
+      "value": "NON"
+    },
+    "id_nomenclature_type_comptage": {
+      "type_widget": "datalist",
+      "attribut_label": "Type du comptage",
+      "api": "nomenclatures/nomenclature/TYPE_COMPTAGE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false
+    },
+    "if_comptage_condition": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Condition d'observation ?",
+      "value": "BONNE",
+      "values": ["BONNE", "MAUVAISE"]
+    },
+    "comm_comptage_condition": {
+      "type_widget": "text",
+      "attribut_label": "Commentaire associé aux conditions d'observation",
+      "hidden": "({value}) => !(value.if_comptage_condition === 'MAUVAISE')"
+    },
+    "if_comptage_exhaustif": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Comptage exhaustif ?",
+      "value": "EXHAUSTIF",
+      "values": ["EXHAUSTIF", "PARTIEL"]
+    },
+    "if_disturbance": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Dérangement lors de la visite ?",
+      "value": "NON",
+      "values": ["OUI", "NON"]
+    },
+    "comm_disturbance": {
+      "type_widget": "text",
+      "attribut_label": "Commentaire associé au dérangement",
+      "hidden": "({value}) => !(value.if_disturbance === 'OUI')"
+    },
+    "id_nomenclature_disturbance": {
+      "type_widget": "datalist",
+      "attribut_label": "Précision du dérangement",
+      "api": "nomenclatures/nomenclature/PRECI_DERANG",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "default": {
+          "cd_nomenclature": "DERANG_ND"
+      },
+      "hidden": "({value}) => !(value.if_disturbance === 'OUI')"
+    }
+  },
+  "change": [
+    "({objForm, meta, value}) => {",
+    "  console.log('log meta', meta);",    
+    "  console.log('log objForm', objForm);",
+
+  "  const idRole = Number(meta?.user?.id_role ?? meta?.id_role ?? objForm.value.id_digitiser);",
+  "  // Si le champ est vide, on met [idRole] (datalist multiple => tableau d'IDs)",
+  "  if (idRole && (!Array.isArray(objForm.value.observers) || objForm.value.observers.length === 0)) {",
+  "    objForm.patchValue({ observers: [idRole] });",
+  "  }",
+  
+  "  const now = new Date();",
+  "  const pad = n => String(n).padStart(2, '0');",
+  "  if (!objForm.value.visit_date_min || objForm.value.visit_date_min.year == null) {",
+  "    objForm.patchValue({",
+  "      visit_date_min: {",
+  "        year: now.getFullYear(),",
+  "        month: now.getMonth() + 1,",
+  "        day: now.getDate()",
+  "      }",
+  "    });",
+  "  }",
+  "",
+    "  if (!objForm.controls.visit_heure?.dirty && !objForm.value.visit_heure) {",
+  "    const h = pad(now.getHours());",
+  "    const m = pad(now.getMinutes());",
+  "    objForm.patchValue({ visit_heure: `${h}:${m}` });",
+  "  }",
+
+     "  if (!objForm.controls.id_dataset?.dirty && !objForm.value.id_dataset) {",
+  "    objForm.patchValue({ id_dataset: meta.parents.site.properties.id_dataset });",
+  "  }",
+
+    "console.log('test value');",
+    "console.log(value);",     
+    "console.log('meta.parents.site.properties.cd_nom: ', meta.parents.site.properties.cd_nom);",
+    "console.log('meta.id_role: ', meta.id_role);",
+    "console.log('meta.parents.site.properties.id_dataset: ', meta.parents.site.properties.id_dataset);",
+    "}",
+    ""
+  ]
+}

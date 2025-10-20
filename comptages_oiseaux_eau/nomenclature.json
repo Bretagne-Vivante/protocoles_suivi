@@ -1,0 +1,278 @@
+{
+  "types": [
+    {
+      "mnemonique": "PRECI_COMPTAGE",
+      "label_default": "Précision du Comptage",
+      "definition_default": "Précision du Comptage (Comptage Mensuel Commun)"
+    },
+    {
+      "mnemonique": "TYPE_COMPTAGE",
+      "label_default": "Type de Comptage",
+      "definition_default": "Type de comptage (Comptage Mensuel Commun)"
+    },
+    {
+      "mnemonique": "PRECI_DERANG",
+      "label_default": "Précision du Dérangement",
+      "definition_default": "Précision du Dérangement (Comptage Mensuel Commun)"
+    },
+    {
+      "mnemonique": "CODE_ATLAS",
+      "label_default": "Code atlas de reproduction des oiseaux",
+      "definition_default": "Code atlas de reproduction des oiseaux (Faune)"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_BONNE",
+      "mnemonique": "Preci_Bonne",
+      "label_default": "Bonne précision",
+      "definition_default": "Bonne précision"
+    },
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_ESTIM_DEDUC",
+      "mnemonique": "Preci_Estim_deduc",
+      "label_default": "Estimation par déduction",
+      "definition_default": "Estimation par déduction"
+    },
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_ORDRE_GRAND",
+      "mnemonique": "Preci_Ordre_grand",
+      "label_default": "Ordre de grandeur",
+      "definition_default": "Ordre de grandeur"
+    },
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_INF_10",
+      "mnemonique": "Preci_inf_10",
+      "label_default": "Précision < 10%",
+      "definition_default": "Précision < 10%"
+    },
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_SOUS_ESTIM",
+      "mnemonique": "Preci_Sous_estim",
+      "label_default": "Sous estimation",
+      "definition_default": "Sous estimation"
+    },
+    {
+      "type":"PRECI_COMPTAGE",
+      "cd_nomenclature": "PRECI_ND",
+      "mnemonique": "Preci_ND",
+      "label_default": "Non-défini",
+      "definition_default": "Non-défini"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_AERO",
+      "mnemonique": "Derang_Aero",
+      "label_default": "Aéronautique",
+      "definition_default": "Aéronautique"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_BALA",
+      "mnemonique": "Derang_Bala",
+      "label_default": "Balade / Promenade",
+      "definition_default": "Balade / Promenade"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_CHAS",
+      "mnemonique": "Derang_Chas",
+      "label_default": "Chasse",
+      "definition_default": "Chasse"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_PECH",
+      "mnemonique": "Derang_Pech",
+      "label_default": "Pêcheur à pied",
+      "definition_default": "Pêcheur à pied"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_PRED",
+      "mnemonique": "Derang_Pred",
+      "label_default": "Prédateur",
+      "definition_default": "Prédateur (Rapaces, etc...)"
+    },
+    {
+      "type":"PRECI_DERANG",
+      "cd_nomenclature": "DERANG_ND",
+      "mnemonique": "Derang_ND",
+      "label_default": "Non-défini",
+      "definition_default": "Non-défini"
+    },
+    {
+      "type":"TYPE_COMPTAGE",
+      "cd_nomenclature": "TYPE_COMPT_D2",
+      "mnemonique": "Type_Compt_D2",
+      "label_default": "Comptage décadaire 2",
+      "definition_default": "Comptage décadaire 2"
+    },
+    {
+      "type":"TYPE_COMPTAGE",
+      "cd_nomenclature": "TYPE_COMPT_D1",
+      "mnemonique": "Type_Compt_D1",
+      "label_default": "Comptage décadaire 1",
+      "definition_default": "Comptage décadaire 1"
+    },
+    {
+      "type":"TYPE_COMPTAGE",
+      "cd_nomenclature": "TYPE_COMPT_D3",
+      "mnemonique": "Type_Compt_D3",
+      "label_default": "Comptage décadaire 3",
+      "definition_default": "Comptage décadaire 3"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_0",
+      "mnemonique": "CAR_0",
+      "label_default": "Non-défini",
+      "definition_default": "Non-défini"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_1",
+      "mnemonique": "CAR_1",
+      "label_default": "1 (Nidification possible)",
+      "definition_default": "Espèce observée durant la saison de reproduction dans un habitat favorable à la nidification"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_2",
+      "mnemonique": "CAR_2",
+      "label_default": "2 (Nidification possible)",
+      "definition_default": "Mâle chanteur (ou cris de nidification) en période de reproduction"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_3",
+      "mnemonique": "CAR_3",
+      "label_default": "3 (Nidification probable)",
+      "definition_default": "Couple observé dans un habitat favorable durant la saison de reproduction"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_4",
+      "mnemonique": "CAR_4",
+      "label_default": "4 (Nidification probable)",
+      "definition_default": "Comportement territorial (chant, querelles avec des voisins, etc.) observé sur un même territoire 2 journées différentes à 7 jours ou plus d'intervalle. Observation simultanée de deux mâles chanteurs ou plus sur un même site"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_5",
+      "mnemonique": "CAR_5",
+      "label_default": "5 (Nidification probable)",
+      "definition_default": "Parades nuptiales ou accouplement ou échange de nourriture entre adultes"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_6",
+      "mnemonique": "CAR_6",
+      "label_default": "6 (Nidification probable)",
+      "definition_default": "Fréquentation d’un site de nid potentiel (distinct d'un site de repos)"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_7",
+      "mnemonique": "CAR_7",
+      "label_default": "7 (Nidification probable)",
+      "definition_default": "Signes ou cris d’inquiétude d’un individu adulte"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_8",
+      "mnemonique": "CAR_8",
+      "label_default": "8 (Nidification probable)",
+      "definition_default": "Présence de plaques incubatrices. (Observation sur un oiseau en main)"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_9",
+      "mnemonique": "CAR_9",
+      "label_default": "9 (Nidification probable)",
+      "definition_default": "Construction d’un nid, creusement d’une cavité"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_10",
+      "mnemonique": "CAR_10",
+      "label_default": "10 (Nidification certaine)",
+      "definition_default": "Adulte feignant une blessure ou cherchant à détourner l’attention"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_11",
+      "mnemonique": "CAR_11",
+      "label_default": "11 (Nidification certaine)",
+      "definition_default": "Nid utilisé récemment ou coquilles vides (oeuf pondu pendant l’enquête)"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_12",
+      "mnemonique": "CAR_12",
+      "label_default": "12 (Nidification certaine)",
+      "definition_default": "Jeunes fraîchement envolés (espèces nidicoles) ou poussins (espèces nidifuges)"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_13",
+      "mnemonique": "CAR_13",
+      "label_default": "13 (Nidification certaine)",
+      "definition_default": "Adulte entrant ou quittant un site de nid (incluant les nids situés trop haut ou les cavités et nichoirs, le contenu du nid n’ayant pu être examiné) ou adulte en train de couver"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_14",
+      "mnemonique": "CAR_14",
+      "label_default": "14 (Nidification certaine)",
+      "definition_default": "Adulte transportant des sacs fécaux ou de la nourriture pour les jeunes"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_15",
+      "mnemonique": "CAR_15",
+      "label_default": "15 (Nidification certaine)",
+      "definition_default": "Nid avec adulte vu couvant ou contenant des œufs"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_16",
+      "mnemonique": "CAR_16",
+      "label_default": "16 (Nidification certaine)",
+      "definition_default": "Nid avec jeune(s) (vu ou entendu)"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_30",
+      "mnemonique": "CAR_30",
+      "label_default": "30 - Nidification possible (défaut)",
+      "definition_default": "Si et seulement si un des codes 1 à 2 n'est pas applicable"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_40",
+      "mnemonique": "CAR_40",
+      "label_default": "40 - Nidification probable (défaut)",
+      "definition_default": "Si et seulement si un des codes 3 à 9 n'est pas applicable"
+    },
+    {
+      "type":"CODE_ATLAS",
+      "cd_nomenclature": "CAR_50",
+      "mnemonique": "CAR_50",
+      "label_default": "50 - Nidification certaine (défaut)",
+      "definition_default": "Si et seulement si un des codes 10 à 16 n'est pas applicable"
+    },
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "COMPT_PT_O",
+      "mnemonique": "Pt_comptage",
+      "label_default": "Point de comptage mensuel commun",
+      "definition_default": "Point de comptage (Comptage Mensuel Commun / Comptages décadaires)"
+    }
+  ]
+}

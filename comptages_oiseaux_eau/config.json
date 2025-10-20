@@ -1,0 +1,15 @@
+{
+  "tree": {
+    "module": {
+      "site": {
+        "visit": {
+          "observation": null
+        }
+      }
+    }
+  },
+  "data": {
+    "nomenclature": ["PRECI_COMPTAGE", "TYPE_COMPTAGE", "CODE_ATLAS", "CONFID", "STATUT_OBS", "SEXE", "STADE_VIE"],
+    "user": ["__CODE_LIST_INVENTOR", "__CODE_LIST_OBSERVER"]
+  }
+}
